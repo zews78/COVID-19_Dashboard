@@ -1,0 +1,51 @@
+{
+	"cases_time_series": [
+		{
+			"dailyconfirmed": "1",
+			"dailydeceased": "0",
+			"dailyrecovered": "0",
+			"date": "30 January ",
+			"totalconfirmed": "1",
+			"totaldeceased": "0",
+			"totalrecovered": "0"
+		},
+		{
+			"dailyconfirmed": "0",
+			"dailydeceased": "0",
+			"dailyrecovered": "0",
+			"date": "31 January ",
+			"totalconfirmed": "1",
+			"totaldeceased": "0",
+			"totalrecovered": "0"
+        }
+    ],
+
+    "statewise": [
+        {
+            "active": "1111",
+            "confirmed": "1204",
+            "deaths": "12",
+            "deltaconfirmed": "0",
+            "deltadeaths": "0",
+            "deltarecovered": "0",
+            "lastupdatedtime": "14/04/2020 18:35:41",
+            "recovered": "81",
+            "state": "Tamil Nadu",
+            "statecode": "TN",
+            "statenotes": ""
+        },
+        {
+            "active": "847",
+            "confirmed": "1005",
+            "deaths": "11",
+            "deltaconfirmed": "0",
+            "deltadeaths": "0",
+            "deltarecovered": "0",
+            "lastupdatedtime": "14/04/2020 22:51:54",
+            "recovered": "147",
+            "state": "Rajasthan",
+            "statecode": "RJ",
+            "statenotes": ""
+        }
+    ]
+}
