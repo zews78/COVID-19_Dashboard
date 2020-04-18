@@ -12,9 +12,35 @@
 
     <div class="root">
         <h1 class="header">Covid'19 Dashboard</h1>
+
+        
+        <div id="india-track">
+            <%indias.forEach((india)=>{%>
+            <div class="top-boxes">
+                <h5>Tracker</h5>    
+            </div>
+            <div class="top-boxes">
+                <h5>Confirmed</h5>
+                <h1><%=india.confirmed%></h1>
+            </div>
+            <div class="top-boxes">
+                <h5>Active</h5>
+                <h1><%=india.active%></h1>
+            </div>
+            <div class="top-boxes">
+                <h5>Recoverd</h5>
+                <h1><%=india.recovered%></h1>
+            </div>
+            <div class="top-boxes">
+                <h5>Deceased</h5>
+                <h1><%=india.deaths%></h1>
+            </div>
+            <%});%>
+        </div>
+
         <div class="table1">
             <table id="mytable">
-                <tr>
+                <tr id="table-header">
                     <th>STATE/UT</th>
                     <th>CONFIRMED</th>
                     <th>ACTIVE</th>
@@ -22,19 +48,11 @@
                     <th>DECEASED</th>
                 </tr>
                 
-                <tr id=row1>
-                    <td>MAHARASHTRA</td>
-                    <td>2500</td>
-                    <td>2000</td>
-                    <td>299</td>
-                </tr>
-
-
 
 
                 <%items.forEach((it)=>{%>
-                <tr>
-                    <td><%=it.state%></td>
+                <tr id="table-data">
+                    <td id="states"><%=it.state%></td>
                     <td><%=it.confirmed%></td>
                     <td><%=it.active%></td>
                     <td><%=it.recovered%></td>
