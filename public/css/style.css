@@ -5,6 +5,21 @@
 .header{
     text-align: center;
 }
+#india-track{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    background-color: cadetblue;
+}
+.top-boxes{
+    width:15%;
+    height: 100px;
+    text-decoration: none;
+    text-align: center;
+    background-color: brown;
+}
+
 table{
 
 
@@ -16,4 +31,21 @@ th,td{
 }
 td{
     text-align: right;
+    cursor: pointer;
+}
+
+th{
+    position:-webkit-sticky;
+    position: sticky;
+    top:0;
+}
+#table-header{
+    /* position: sticky; */
+}
+#table-data{
+    /* position: relative; */
+}
+#states{
+    text-align: left;
+    width:150px;
 }
