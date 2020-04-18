@@ -6,16 +6,40 @@ app.use(express.static('public'));
 // to recognise incoming request object as array/string
 app.use(express.urlencoded({extended: false}));
 
+
+
+
 app.get('/',(req, res)=>{
+
+    // fetch("https://api.covid19india.org/data.json", { method: "Get" })
+    // .then(res => res.json())
+    // .then((json) => {
+    //     console.log(json.statewise.length);
+    //     console.log(json.statewise[0]);
+    //     res.render({india:json.statewise[0]});
+        
+    // });
+
     //display this page
     fetch("https://api.covid19india.org/data.json", { method: "Get" })
         .then(res => res.json())
         .then((json) => {
             // do something with JSON
-            console.log(json);
+            // console.log(json.statewise[0]);
+            // for(let i=1;i<=json.statewise.length;i++){
+            //     var state= json.statewise[i];
+            //     console.log(state);
+            // }
+            
+            json.statewise.push(json.statewise[0]);
+            json.statewise.splice(0,1);
+            console.log(json.statewise.length);
             res.render('zews.ejs',{items:json.statewise});
+            
+            
         });
 });
+
 
 
 
@@ -42,4 +66,11 @@ app.get('/',(req, res)=>{
 // x= document.getElementById("row1").appendChild(z);
 
 
-app.listen(3003);
+app.listen(3001);
+
+
+//statewise, no. of cases tested
+//  https://api.covid19india.org/data.json
+//district wise
+//  https://api.covid19india.org/state_district_wise.json
+
