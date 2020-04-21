@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid'19 Dashboard</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+</head>
+<body>
+    <div class="root">
+        <div class="main">
+            <%items.forEach((it)=>{%>
+                <div class="card"><a href="<%=it.url%>">
+                    <div class="image">
+                        <!-- <object data="/images/loading.png" type="image/png/gif"></object> -->
+                        <img width='100%' height="230px" src="<%=it.urlToImage%>">
+                    </div>
+                    <h4><%=it.title%></h4>
+                    <h6><%=it.description%></h6>
+
+                </a></div>
+                
+            <%});%>
+        </div>
+    </div>
+    
+
+
+
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
