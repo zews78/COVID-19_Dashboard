@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid'19 Dashboard</title>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Kanit:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <div class="root">
+        <h1 class="header">Covid'19 Dashboard</h1>
+
+        <div id="india-track">
+            <div class="top-boxes">
+                <h5 class="tip">Coronavirus Cases:</h5>
+                <h1 id="confirmed"><%=items.rows[0].total_cases%></h1>
+            </div>
+
+            <div class="top-boxes">
+                <h5 class="tip">Recoverd:</h5>
+                <h1 id="recovered"><%=items.rows[0].total_recovered%></h1>
+            </div>
+            <div class="top-boxes">
+                <h5 class="tip">Deceased:</h5>
+                <h1 id="deaths"><%=items.rows[0].total_deaths%></h1>
+            </div>
+            <div class="top-boxes">
+                <h5 class="tip">Last Updated Time:</h5>
+                <h2 id='last'><%=items.last_update%></h2>
+            </div>
+            <a href="#table-map1"><div class="swipe" style="margin-left: 44%;"><br><br><br>
+                <img height="53" src="/images/swipe_up.png">
+            </div></a>
+            <p id="swipe-text" style="margin-left: 40%;">Swipe Up</p><br><br>
+        </div>
+
+        <div class="table_map" id="table-map1">
+            <div class="table1">
+                <table id="mytable"><br><br>
+                    <tr id="table-header">
+                        <th>Country</th>
+                        <th>Total Cases</th>
+                        <th>New Cases</th>
+
+                        <th>Total Recovered</th>
+
+                        <th>Total Deaths</th>
+                        <th>New Deaths</th>
+                    </tr>
+
+                    <%for(var i=1;i<=9;i++){%>
+                    <tr id="table-data">
+                        <td id="states"><%=items.rows[i].country%></td>
+                        <td><%=items.rows[i].total_cases%></td>
+                        <td><%=items.rows[i].new_cases%></td>
+
+                        <td><%=items.rows[i].total_recovered%></td>
+                        <td><%=items.rows[i].total_deaths%></td>
+                        <td><%=items.rows[i].new_deaths%></td>
+                    </tr>
+                    <%}%>
+                </table>
+            </div>
+
+            <div class="map">
+                <!-- (c) ammap.com | SVG map of India 2019 - High -->
+
+            </div>
+            <a href="/world" style="text-decoration: none;"><div class="see-more">..See More..</div></a>
+            <br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
