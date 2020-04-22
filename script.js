@@ -10,17 +10,10 @@ app.use(express.static('public'));
 // to recognise incoming request object as array/string
 app.use(express.urlencoded({extended: false}));
 
-
-
-app.get('/',(req, res)=>{
-    res.render('ui.ejs');
-});
-
-app.get('/zone',(req, res)=>{
-    res.render('zone.ejs');
-});
-
-
+// function update(){
+//     console.log('hello boy');
+// };
+    
 
 app.get('/india',(req, res)=>{
 
@@ -47,6 +40,7 @@ app.get('/india',(req, res)=>{
             json.statewise.push(json.statewise[0]);
             json.statewise.splice(0,1);
             console.log(json.statewise.length);
+            console.log(json.statewise[0]);
 
             res.render('zews.ejs',{items:json.statewise});
             // var india = json.statewise[37];
@@ -56,6 +50,45 @@ app.get('/india',(req, res)=>{
 
         });
 });
+
+app.get('/world1',(req,res)=>{
+    fetch("https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search", { method: "Get" })
+    .then(res => res.json())
+    .then((json) => {
+        // do something with JSON
+        // json.data.rows.push(json.data.rows[0]);
+        // json.data.rows.splice(0,1);
+        // console.log(json.Countries);
+        res.render('world1.ejs',{items:json.data});
+        console.log(json.data.rows.length);
+    });
+})
+
+
+app.get('/world',(req,res)=>{
+    fetch("https://api.covid19api.com/summary", { method: "Get" })
+    .then(res => res.json())
+    .then((json) => {
+        // do something with JSON
+        // json.data.rows.push(json.data.rows[0]);
+        // json.data.rows.splice(0,1);
+        // console.log(json.Countries);
+        res.render('world.ejs',{items:json});
+        console.log(json.Countries.length);
+    });
+})
+
+app.get('/',(req, res)=>{
+    res.render('ui.ejs');
+});
+
+app.get('/zone',(req, res)=>{
+    res.render('zone.ejs');
+});
+
+
+
+
 
 
 app.get('/news',(req, res)=>{
@@ -103,7 +136,12 @@ app.get('/news',(req, res)=>{
     //     */
     // });
     
+// function percentage(index){
+//     var num=(items[index].confirmed)/(items[37].confirmed)*100;
+//     n=num.toFixed(2);
+//     return(n);
 
+// }
 
 
         
@@ -146,11 +184,13 @@ app.get('/news',(req, res)=>{
 // x= document.getElementById("row1").appendChild(z);
 
 
-app.listen(3003);
+app.listen(3001);
 
 
 //statewise, no. of cases tested
 //  https://api.covid19india.org/data.json
 //district wise
 //  https://api.covid19india.org/state_district_wise.json
+//country
+//https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search
 
