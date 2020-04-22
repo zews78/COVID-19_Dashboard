@@ -1,33 +1,206 @@
 *{
-    margin:10px;
-    padding:10px;
+    margin:0px;
+    padding:0px;
 }
 .header{
-    text-align: center;
+    /* text-align: center; */
+    font-family: "Kanit", sans-serif;
 }
+body{
+    background-color: #ba0a07;
+}
+@media only screen and (min-width: 900px){
+    .swipe{
+        display:none;
+    }
+    #swipe-text{
+        display: none;
+    }
+    .table1{
+        margin-left: 20%;
+    }
+
+    .see-more{
+        margin-left: 607%;
+    }
+    #states{
+        width: 128px;
+    }
+    /* .state-track{
+
+    } */
+    .map-data{
+        width: 40%;
+        margin-left: 167px;
+    }
+    table{
+        margin-left: 47px;
+    }
+    #confirmed{
+        font-size: 6em;
+    }
+    #recovered{
+        font-size: 6em;
+    }
+    #deaths{
+        font-size: 6em;
+    }
+    #active{
+        font-size: 6em;
+    }
+    #last{
+        font-size: 3em;
+    }
+    #last1{
+        font-size: 3em;
+    }
+    .tip{
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .tip{
+        font-size: larger;
+    }
+    #confirmed{
+        font-size: 16vw;
+    }
+    #recovered{
+        font-size: 16vw;
+    }
+    #deaths{
+        font-size: 16vw;
+    }
+    #active{
+        font-size: 16vw;
+    }
+    #last{
+        font-size: 9vw;
+    }
+    #last1{
+        font-size: 6vw;
+    }
+    th,td{
+        font-size: 3vw;
+    }
+    td{
+        text-align: left;
+    }
+    .see-more{
+        margin-left: 153%;
+    }
+    #states{
+        width: 108px;
+    }
+
+    .map-data{
+        width: 100%;
+        margin-left: 0px;
+        /* margin-top: 38px; */
+    }
+
+}
+
 #india-track{
     width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px;
-    background-color: cadetblue;
+    height: auto;
+    /* background-color: cadetblue; */
+    border-bottom-right-radius: 50%;
+    background-color: #f4362a;
 }
 .top-boxes{
-    width:15%;
-    height: 100px;
+    margin:5px;
+    margin-left: 11vw;
+    padding: 5px;
+    width:73%;
+    height: auto;
     text-decoration: none;
     text-align: center;
-    background-color: brown;
+    padding: 10px;
+    /* background-color: brown; */
 }
+.tip{
+    /* font-size: 2em; */
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+#confirmed{
+    color: #e5e5e5;
+    /* font-size: 6em; */
+    font-family: 'Bangers', cursive;
+}
+#recovered{
+    color: #98ce00;
+    /* font-size: 6em; */
+    font-family: 'Bangers', cursive;
+}
+#deaths{
+    color: #191919;
+    /* font-size: 6em; */
+    font-family: 'Bangers', cursive;
+}
+#active{
+    color: #3c0919;
+    /* font-size: 6em; */
+    font-family: 'Bangers', cursive;
+}
+#last{
+    color: rgb(204, 204, 204);
+    /* font-size: 3em; */
+    font-family:  cursive;
+}
+#last1{
+    color: rgb(204, 204, 204);
+    /* font-size: 3em; */
+    font-family:  cursive;
+}
+.table_map{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #95d7ae;
+}
+.map-data{
+    /* margin-left: 68px; */
+    margin-top: 38px;
+    /* width: 40%; */
+    height:auto;
+    top:0px;
+    /* background-color: darkcyan; */
+}
+.map{
+    /* margin-left: 0px; */
+    margin-top: 25px;
+    width: 100%;
+    height:auto;
+    top:0px;
+    /* background-color: cornsilk; */
+}
+#above-map{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: coral;
+    width: 100%;
+}
+.state-track{
+    width:25%;
+    height: 100px;
+    background-color: chartreuse;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
 
+}
 table{
-
-
+    position: relative;
+    
     border-color: black;
 }
 th,td{
-    background-color: blanchedalmond;
     border-radius: 6px;
+    margin:2px;
+    padding:2px;
+    font-family: 'Kanit', sans-serif;
+    
 }
 td{
     text-align: right;
@@ -35,17 +208,67 @@ td{
 }
 
 th{
+    background-color: #fefdff;
     position:-webkit-sticky;
     position: sticky;
     top:0;
 }
-#table-header{
-    /* position: sticky; */
-}
-#table-data{
-    /* position: relative; */
-}
+
 #states{
     text-align: left;
-    width:150px;
+    /* width:128px; */
+}
+.path-region:hover{
+    stroke-width: 1px;
+}
+tr:hover{
+    background-color: #fefdff;
+    /* border:5px solid black; */
+
+}
+
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+.tooltip .texta{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .texta {
+    visibility: visible;
+
+}
+/* title{
+ display: inline-block;
+ max-width: 10px;   
+} */
+
+/* coolorss{
+    FCEFF9 grey
+    95d7ae clay
+    f22b29 red
+    f4362a red2
+    c5e292 peach
+} */
+
+.see-more{
+    width:83px;
+    background-color: teal;
+
+    border-radius: 4px;
+    /* margin: 5px; */
+    padding: 5px;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+}
+.see-more:hover{
+    background-color: #60efff;
 }
