@@ -1,20 +1,70 @@
-.card{
-    height:200px;
-    width: 70%;
-    background-color: rgb(226, 214, 165);
-    text-decoration: none;
-    text-align: center;
-    padding:20px;
-    margin:50px;
-    margin-left: 180px;
-    box-shadow:0px 8px 0px black;
+* {
+  margin: 0px;
+  padding: 0px;
 }
-.main{
-    width: 100%;
-    text-decoration: none;    
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    background-color: cyan;
-    
+body {
+  background-color: #fdb28e;
+  font-family: "Kanit", sans-serif;
+}
+@media only screen and (min-width: 900px) {
+  .card {
+    margin-left: 180px;
+  }
+  .track {
+    margin-left: 401px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .card {
+    margin-left: 34px;
+  }
+  .track{
+      margin-left: 112px;
+  }
+}
 
+
+.card {
+  height: 200px;
+  width: 70%;
+  background-color: #f5765d;
+  /* text-decoration: none; */
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  /* margin: 50px; */
+  /* margin-left: 180px; */
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px -1px black;
+}
+.main {
+  width: 100%;
+  text-decoration: none;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  background-color: #fdb28e;
+}
+
+.header {
+  background-color: white;
+}
+.inner-div {
+  width: 20%;
+  height: 100%;
+  background-color: #ea2b1f;
+}
+.track {
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px -1px black;
+  padding: 5px;
+  /* margin-left: 253px; */
+  text-align: center;
+  width: 10%;
+  background-color: #ea2b1f;
+}
+a {
+  text-decoration: none;
+  /* margin: 10px; */
+  /* padding: 15px; */
+  font-size: 12px;
 }
