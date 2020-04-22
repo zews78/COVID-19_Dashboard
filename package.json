@@ -1,15 +1,14 @@
 {
-  "name": "kanvas_20",
+  "name": "kan_vas20",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
   "dependencies": {
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "modules": "^0.4.0",
-    "node": "^13.12.0",
+    "newsapi": "^2.4.0",
     "node-fetch": "^2.6.0",
-    "nodejs": "^0.0.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
