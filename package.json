@@ -1,13 +1,17 @@
 {
   "name": "kan_vas20",
+  "engines": {
+    "node":">=10"
+  },
   "version": "1.0.0",
-  "description": "",
+  "description": "An web app that provies latest info of related to COVID'19",
   "main": "script.js",
   "dependencies": {
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "newsapi": "^2.4.0",
     "node-fetch": "^2.6.0",
+    "nodejs": "0.0.0",
     "request": "^2.88.2"
   },
   "devDependencies": {},
@@ -15,5 +19,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zews78/COVID-19_Dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zews78/COVID-19_Dashboard/issues"
+  },
+  "homepage": "https://github.com/zews78/COVID-19_Dashboard#readme"
 }
