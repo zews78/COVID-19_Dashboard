@@ -5,6 +5,7 @@ const request = require('request');
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('9ea7641448834c92a17de8c4cadc50f7');
 
+var PORT = process.env.PORT || 5000
 
 app.use(express.static('public'));
 // to recognise incoming request object as array/string
@@ -102,7 +103,7 @@ app.get('/news',(req, res)=>{
         language: 'en',
         country: 'in',
     }).then(response => {
-        console.log(response);
+        // console.log(response);
         /*
         {
             status: "ok",
@@ -153,8 +154,7 @@ app.get('/news',(req, res)=>{
 //           'apiKey=9ea7641448834c92a17de8c4cadc50f7';
 // var req = new request(url);
 
-// fetch(req)
-//     .then(function(response){
+// fetch(req)q
 //         console.log(response);
 //     });
 // // });
@@ -184,9 +184,9 @@ app.get('/news',(req, res)=>{
 // x= document.getElementById("row1").appendChild(z);
 
 
-app.listen(3001);
-
-
+app.listen(PORT, ()=>{
+    console.log(`listening on ${ PORT }`)
+});
 //statewise, no. of cases tested
 //  https://api.covid19india.org/data.json
 //district wise
