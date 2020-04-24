@@ -52,7 +52,7 @@ app.get('/india',(req, res)=>{
         });
 });
 
-app.get('/world1',(req,res)=>{
+app.get('/world',(req,res)=>{
     fetch("https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search", { method: "Get" })
     .then(res => res.json())
     .then((json) => {
@@ -66,7 +66,7 @@ app.get('/world1',(req,res)=>{
 })
 
 
-app.get('/world',(req,res)=>{
+app.get('/world1',(req,res)=>{
     fetch("https://api.covid19api.com/summary", { method: "Get" })
     .then(res => res.json())
     .then((json) => {
