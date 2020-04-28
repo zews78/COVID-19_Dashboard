@@ -13,7 +13,7 @@
 
 <body>
     <div class="root">
-                <h2 class="header">Covid'19 Dashboard</h2>
+        <h2 class="header">Covid'19 Dashboard</h2>
         <a href="https://github.com/zews78/COVID-19_Dashboard"><img style="float: right; height: 24px; margin-top: -31px;" src="/images/user.png"></a>
 
         <div id="india-track">
@@ -54,19 +54,41 @@
                         <th>Total Deaths</th>
                         <th>New Deaths</th>
                     </tr>
+                    <%const total=247;
+                    var arr=[];
+                    for(var j=0;j<=total;j++){
+                        arr.push(items.Countries[j].TotalConfirmed);
+                        arr.sort((a,b)=>{
+                            return b-a
+                        });
+                    }
+                    var j=0;
+                    for(var i=0;i<=total-1;i++){
+                        if(arr[i]!= arr[i+1]){
+                            arr[j]=arr[i];
+                            j++;
+                        }
+                    }
+                    arr[j]=arr[total-1];
+                    var final=j;%>
+                    <%for(var z=0;z<=final;z++){
+                        for(var i=0;i<=total;i++){
+                            if(items.Countries[i].TotalConfirmed == arr[z]){%>
+                                <tr id="table-data">
+                                    <td id="states"><%=items.Countries[i].Country%></td>
+                                    <td><%=items.Countries[i].TotalConfirmed%></td>
+                                    <td><%=items.Countries[i].NewConfirmed%></td>
+                                    
+                                    <td><%=items.Countries[i].TotalRecovered%></td>
+            
+                                    <td><%=items.Countries[i].TotalDeaths%></td>
+                                    <td><%=items.Countries[i].NewDeaths%></td>
+                                </tr>
+                            <%}%>
+                        <%}%>
+                    <%}%>    
+                    
 
-                    <%for(var i=0;i<=245;i++){%>
-                    <tr id="table-data">
-                        <td id="states"><%=items.Countries[i].Country%></td>
-                        <td><%=items.Countries[i].TotalConfirmed%></td>
-                        <td><%=items.Countries[i].NewConfirmed%></td>
-                        
-                        <td><%=items.Countries[i].TotalRecovered%></td>
-
-                        <td><%=items.Countries[i].TotalDeaths%></td>
-                        <td><%=items.Countries[i].NewDeaths%></td>
-                    </tr>
-                    <%}%>
                 </table>
             </div>
 
