@@ -106,25 +106,25 @@
                         
                         }%>
                 <%function coolor(x){
-                            if(percentage(x)>25){
+                            if(percentage(x)>=25){
                                 return("#610403");
                             }
-                            else if(percentage(x)>10 && percentage(x)<25){
+                            else if(percentage(x)>=10 && percentage(x)<25){
                                 return("#bc1e16");
                             }
-                            else if(percentage(x)>3.8 && percentage(x)<10){
+                            else if(percentage(x)>=3.8 && percentage(x)<10){
                                 return("#f05844")
                             }
-                            else if(percentage(x)>0.5 && percentage(x)<3.8){
+                            else if(percentage(x)>=0.5 && percentage(x)<3.8){
                                 return("#fdb28e")
                             }
-                            else if(percentage(x)>0.1 && percentage(x)<0.5){
+                            else if(percentage(x)>=0.1 && percentage(x)<0.5){
                                 return("#fdb28e")
                             }
                             else if(percentage(x)<0.1){
                                 return("none")
                             }
-                            else return("#a2c41e");
+                            
                         }%>
                 <g class="india">
                     <g class="states">
